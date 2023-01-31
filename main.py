@@ -2,13 +2,21 @@ import praw
 import smtplib
 from email.mime.text import MIMEText
 
+
+infoFile = open("hiddenInfo.txt", "r")
+
+
 reddit = praw.Reddit(
-    client_id="7xzZmO91rjmHMfjGRurQ-A",
-    client_secret="pjEg0G1bOJioUSXH7V0hkFSi0P5rnw",
-    password="2025awesomE",
-    user_agent="HeadphoneManReddit0.1",
-    username="pangwan123",
+    client_id=infoFile.readline().strip(),
+    client_secret=infoFile.readline().strip(),
+    password=infoFile.readline().strip(),
+    user_agent=infoFile.readline().strip(),
+    username=infoFile.readline().strip()
 )
+infoFile.close()
+
+
+
 
 LOOKFORS = ("airpods pro", "airpod pros", "xm4","xm5", "3060","3070", "3080")
 
